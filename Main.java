@@ -2,25 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static String BMICategory(double w, double h) {
-        if ((w < 10 || w > 500) || (h < 0.5 || h > 2.60)) {
-            return "Input error";
-        }
-        String res;
-        double bmi = (w) / Math.pow(h, 2);
+        double bmi = 0.0;
+        bmi = w/(h*h);
+        bmi = (double)  Math.round(bmi*10)/10;
         if (bmi < 18.5) {
-            res = "Underweight";
-        } else if (bmi < 25) {
-            res = "Normal";
-        } else if (bmi < 30) {
-            res = "Overweight";
-        } else if (bmi < 35) {
-            res = "Obese";
-        } else if (bmi < 40) {
-            res = "Severely Obese";
-        } else {
-            res = "Morbidly Obese";
-        }
-        return res;
+            return "thiếu cân";
+        } else if (bmi < 23) {
+            return "bình thường";
+        } else return "béo phì";
     }
 
     public static void main(String[] args) {
